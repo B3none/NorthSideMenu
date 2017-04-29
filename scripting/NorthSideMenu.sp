@@ -19,8 +19,17 @@ static const char s_CommandList[][] =
 	"sm_knife",
 	"sm_gloves",
 	"sm_coin",
-	"sm_music",
-	"sm_radio"
+	"sm_music"
+}; 
+
+static const char s_TranslationList[][] =
+{
+	"Menu Title",
+	"Weapon Skins",
+	"Knife",
+	"Gloves",
+	"Pin",
+	"Music"
 }; 
 
 public void OnPluginStart()
@@ -47,12 +56,13 @@ public int NorthSideHandler(Menu menu, MenuAction action, int client, int choice
 Menu BuildNorthSideMenu()
 {
 	Menu menu = new Menu(NorthSideHandler, MENU_ACTIONS_ALL);
-	menu.SetTitle("%T", "Menu Title", LANG_SERVER);
-	menu.AddItem("%T", "Weapon Skins");
-	menu.AddItem("%T", "Knife");
-	menu.AddItem("%T", "Gloves");
-	menu.AddItem("%T", "Coin");
-	menu.AddItem("%T", "Music Kit");
+	menu.SetTitle("%T", s_TranslationList[0], LANG_SERVER);
+	
+	for(int i = 1; i <= sizeof(s_TranslationList); i++)
+	{
+		menu.AddItem("%T", s_TranslationList[i]);
+	}
+	
 	menu.ExitButton = true;
 	return menu;
 }
