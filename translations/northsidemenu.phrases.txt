@@ -1,0 +1,37 @@
+"Phrases"
+{
+	"Menu Title"
+	{
+		"en"	"NorthSide Menu\n Select an option:"
+	}
+	
+	"Weapon Skins"
+	{
+		"en"	"Weapon Skins"
+	}
+	
+	"Knife"
+	{
+		"en"	"Knife"
+	}
+	
+	"Gloves"
+	{
+		"en"	"Gloves"
+	}
+	
+	"Coin"
+	{
+		"en"	"Pin"
+	}
+	
+	"Music Kit"
+	{
+		"en"	"Music"
+	}
+	
+	"Radio"
+	{
+		"en"	"Radio"
+	}
+}
