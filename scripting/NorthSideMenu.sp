@@ -55,16 +55,18 @@ public int NorthSideHandler(Menu menu, MenuAction action, int client, int choice
  
 Menu BuildNorthSideMenu()
 {
-	Menu menu = new Menu(NorthSideHandler, MENU_ACTIONS_ALL);
-	menu.SetTitle("%T", s_TranslationList[0], LANG_SERVER);
+	Menu nsm = new Menu(NorthSideHandler, MENU_ACTIONS_ALL);
+	nsm.SetTitle("%T", "%s", s_TranslationList[0], LANG_SERVER);
 	
 	for(int i = 1; i <= sizeof(s_TranslationList); i++)
 	{
-		menu.AddItem("%T", s_TranslationList[i]);
+		char translation[128];
+		Format(translation, sizeof(translation), "%s", s_TranslationList[i]);
+		nsm.AddItem("%T", translation);
 	}
 	
-	menu.ExitButton = true;
-	return menu;
+	nsm.ExitButton = true;
+	return nsm;
 }
 
 public Action NorthSideMenu(int client, int args)
